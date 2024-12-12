@@ -7,7 +7,8 @@ A web based application for booking medicines.
 3. Requirements
 4. Features
 5. Setup for Frontend
-6. Setup for backend
+6. Setup for Database
+7. Setup for backend
 
 # Description
 E-Medicare application is a web based application which is built using Java. This application helps in booking the medicines in a easy and comfortable way. Using this application users can quickly Sign up, Login, Book Medicines, Pay Online, Give feedback, and Log out. Admin can add Medicines, log out. Users can Login, Book Medicines, Pay online and Logout.
