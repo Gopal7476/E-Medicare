@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Add Medicine</h2>
+    <form (ngSubmit)="onAdd()">
+      <div class="form-group">
+        <label for="medicineName">Medicine Name:</label>
+        <input type="text" id="medicineName" [(ngModel)]="medicine.medicineName" name="medicineName" required>
+      </div>
+      <div class="form-group">
+        <label for="medicineBrand">Medicine Brand:</label>
+        <input type="text" id="medicineBrand" [(ngModel)]="medicine.medicineBrand" name="medicineBrand" required>
+      </div>
+      <div class="form-group">
+        <label for="medicineDescription">Description:</label>
+        <input type="text" id="medicineDescription" [(ngModel)]="medicine.medicineDescription" name="medicineDescription" required>
+      </div>
+      <div class="form-group">
+        <label for="medicineAvailability">Availability:</label>
+        <select id="medicineAvailability" [(ngModel)]="medicine.medicineAvailability" name="medicineAvailability" required>
+          <option value="Available">Available</option>
+          <option value="Not Available">Not Available</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="medicineType">Medicine Type:</label>
+        <select id="medicineType" [(ngModel)]="medicine.medicineType" name="medicineType" required>
+          <option value="Anti-biotic">Anti-biotic</option>
+          <option value="Balm">Balm</option>
+          <option value="Capsule">Capsule</option>
+          <option value="Injection">Injection</option>
+          <option value="Juice">Juice</option>
+          <option value="Liquid">Liquid</option>
+          <option value="Monitor Box">Monitor Box</option>
+          <option value="Ointment">Ointment</option>
+          <option value="Pellets">Pellets</option>
+          <option value="Powder">Powder</option>
+          <option value="Tablet">Tablet</option>
+          <option value="Syrup">Syrup</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="medicinePrice">Price:</label>
+        <input type="number" id="medicinePrice" [(ngModel)]="medicine.medicinePrice" name="medicinePrice" required>
+      </div>
+      <button type="submit">Add</button>
+    </form>
+</div>
+  

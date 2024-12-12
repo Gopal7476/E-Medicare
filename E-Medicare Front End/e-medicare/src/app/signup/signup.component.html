@@ -1,0 +1,103 @@
+<header>
+    <div class = "headerContent">
+        <div class = "logo">
+            <h2>MediStore</h2>
+        </div>
+        <div class = "headernavigationLinks">
+            <ul>
+                <li><a routerLink = "/">Back</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+        <h3>Signup</h3>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="userFirstName">Firstname:</label>
+                <input type="text" id="userFirstName" name="userFirstName" placeholder="Steve" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="userLastName">Lastname:</label>
+                <input type="text" id="userLastName" name="userLastName" placeholder="Horton" ngModel required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="userName">Username:</label>
+                <input type="text" id="userName" name="userName" placeholder="steve12" ngModel required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$">
+                <div *ngIf="signupForm.controls['userName']?.errors?.['pattern']" class="error-message">
+                    Username must contain both letters and numbers.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" placeholder="stevehorton@gmail.com" ngModel required email>
+                <div *ngIf="signupForm.controls['userEmail']?.invalid && (signupForm.controls['userEmail']?.dirty || signupForm.controls['userEmail']?.touched)" class="error-message">
+                    Please enter a valid email address.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="userPhoneNumber">PhoneNumber:</label>
+                <input type="text" id="userPhoneNumber" name="userPhoneNumber" placeholder="1234567890" ngModel required pattern="^\d{10}$">
+                <div *ngIf="signupForm.controls['userPhoneNumber']?.errors?.['pattern']" class="error-message">Phone number must be 10 digits long.</div>
+            </div>
+            <div class="form-group">
+                <label for="userGender">Gender:</label>
+                <select id="userGender" name="userGender" ngModel required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="userAddress">PlotNo, Area and Street:</label>
+                <input type="text" id="userAddress" name="userAddress" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="userDistrict">District:</label>
+                <input type="text" id="userDistrict" name="userDistrict" placeholder="Kakinada" ngModel required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="userState">State:</label>
+                <input type="text" id="userState" name="userState" placeholder="Andhra Pradesh" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="userZipCode">Zipcode:</label>
+                <input type="text" id="userZipCode" name="userZipCode" placeholder="000000" ngModel required pattern="^\d{6}$">
+                <div *ngIf="signupForm.controls['userZipCode']?.errors?.['pattern']" class="error-message">Zip Code must be 6 digits long.</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="userPassword">Password:</label>
+                <input type="password" id="userPassword" name="userPassword" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" ngModel required>
+                <div *ngIf="signupForm.controls['confirmpassword']?.value !== signupForm.controls['userPassword']?.value" class="error-message">
+                    Passwords do not match.
+                </div>
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div *ngIf="showSuccessMessage" class="success-message">
+        Signup successful!
+    </div>
+</div>

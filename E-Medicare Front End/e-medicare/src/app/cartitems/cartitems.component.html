@@ -1,0 +1,43 @@
+<header>
+    <div class="headerContent">
+        <div class="logo">
+            <h2>MediStore</h2>
+        </div>
+        <div class="headernavigationLinks">
+            <ul>
+                <li><a routerLink="/userhome">Back</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <h2>Cart Items</h2>
+    <table class="cart-items-table">
+        <thead>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Quantity</th>
+                <th>Product Price</th>
+                <th>Subtotal</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartItems">
+                <td>{{ item.medicineName }}</td>
+                <td class="quantity-buttons">
+                    <button class="decrement-btn" (click)="updateCartQuantityAndSubPrice(item.cartId, false)">-</button>
+                    {{ item.cartQuantity }}
+                    <button class="increment-btn" (click)="updateCartQuantityAndSubPrice(item.cartId, true)">+</button>
+                </td>
+                <td>{{ item.productPrice | currency: 'INR':'symbol':'1.2-2' }}</td>
+                <td>{{ item.subTotal | currency: 'INR':'symbol':'1.2-2' }}</td>
+                <td> <button class="delete-btn" (click)="deleteCartItem(item.cartId)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="proceed-to-pay">
+        <h3>Total: {{ getTotal() | currency: 'INR':'symbol':'1.2-2' }}</h3>
+        <button class="pay-btn" (click)="proceedToPay()">Proceed to Pay</button> 
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<header>
+    <div class="headerContent">
+        <div class="logo">
+            <h2>MediStore</h2>
+        </div>
+        <div class="headernavigationLinks">
+            <ul>
+                <li><a routerLink="/cart">Back to Cart</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <h2>Payments</h2>
+    <div class="card">
+        <div class="amount-to-pay">
+            <h3>Total Amount: {{ getTotal() | currency: 'INR':'symbol':'1.2-2' }}</h3> 
+        </div>
+        <form (ngSubmit)="onPay()">
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" [(ngModel)]="payment.cardNumber" name="cardNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="cardHolderName">Card Holder Name:</label>
+                <input type="text" id="cardHolderName" [(ngModel)]="payment.cardHolderName" name="cardHolderName" required>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" [(ngModel)]="payment.expiryDate" name="expiryDate" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv" [(ngModel)]="payment.cvv" name="cvv" required>
+            </div>
+            <button type="submit" class="pay-btn">Pay Now</button>
+        </form>
+    </div>
+</div>

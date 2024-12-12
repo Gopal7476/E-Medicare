@@ -1,0 +1,63 @@
+<header>
+    <div class="headerContent">
+        <div class="logo">
+            <h2>MediStore</h2>
+        </div>
+        <div class="headernavigationLinks">
+            <ul>
+                <li><a routerLink="/cartitems">Cart</a></li>
+                <li><a routerLink="">Signout</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Medicines List</h2>
+    <div class="search-bar">
+        <div class="search-container">
+            <input type="text" placeholder="Search for medicine" [(ngModel)]="searchText" />
+        </div>
+        <div class="categories-container">
+            <label for="categories">Categories:</label>
+            <select id="categories" [(ngModel)]="selectedType">
+                <option value="">All Types</option>
+                <option *ngFor="let type of medicineTypes" [value]="type">{{ type }}</option>
+            </select>
+        </div>
+    </div>
+    <table class="medicines-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let medicine of paginatedMedicines()">
+                <td>{{ medicine.medicineName }}</td>
+                <td>{{ medicine.medicineBrand }}</td>
+                <td>{{ medicine.medicineDescription }}</td>
+                <td>{{ medicine.medicineType }}</td>
+                <td>{{ medicine.medicinePrice }}</td>
+                <td class="action-buttons">
+                    <button class="addtocartbutton" (click)="addToCart(medicine)">Add to Cart</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button (click)="previousPage()" [disabled]="currentPage === 1" class="pagination-button">
+            &#9664;
+        </button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="pagination-button">
+            &#9654; 
+        </button>
+    </div>
+    
+</div>

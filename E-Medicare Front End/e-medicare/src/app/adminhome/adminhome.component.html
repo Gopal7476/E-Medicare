@@ -1,0 +1,43 @@
+<header>
+    <div class = "headerContent">
+        <div class = "logo">
+            <h2>MediStore</h2>
+        </div>
+        <div class = "headernavigationLinks">
+            <ul>
+                <li><a routerLink = "/addmedicine">AddMedicines</a></li>
+                <li><a routerLink = "">Signout</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <h2>Medicines List</h2>
+    <table class="medicines-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Description</th>
+          <th>Availability</th>
+          <th>Type</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medicine of medicines">
+          <td>{{ medicine.medicineName }}</td>
+          <td>{{ medicine.medicineBrand }}</td>
+          <td>{{ medicine.medicineDescription }}</td>
+          <td>{{ medicine.medicineAvailability }}</td>
+          <td>{{ medicine.medicineType }}</td>
+          <td>{{ medicine.medicinePrice }}</td>
+          <td class="action-buttons">
+            <button class = "update-button" (click)="updateMedicine(medicine)">Update</button>
+            <button class = "delete-button" (click)="deleteMedicine(medicine.medicineId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

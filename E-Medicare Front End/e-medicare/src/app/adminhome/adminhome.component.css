@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    height: 9vh;
+}
+
+.logo {
+    flex-grow: 1;
+    padding-left: 70px;
+}
+
+.headernavigationLinks ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.headernavigationLinks ul li {
+    margin: 20px;
+}
+
+.headernavigationLinks ul li a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.container h2 {
+    text-align: center;
+}
+  
+.medicines-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+  
+.medicines-table th, .medicines-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+  
+.medicines-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+  
+.medicines-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+  
+.medicines-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+  
+.medicines-table tr:hover {
+    background-color: #ddd;
+}
+  
+.action-buttons {
+    text-align: center; /* Center content in the action column */
+}
+  
+.action-buttons button {
+    margin: 0 5px; /* Add some spacing between buttons */
+    padding: 8px 16px;
+    border-radius: 8px; /* Curved edges */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* White text color */
+    font-size: 14px;
+}
+  
+.action-buttons .update-button {
+    background-color: #FFD700; /* Yellow background */
+}
+  
+.action-buttons .delete-button {
+    background-color: #FF0000; /* Red background */
+}
+  

@@ -1,0 +1,74 @@
+<header>
+    <div class="headerContent">
+        <div class="logo">
+            <h2>MediStore</h2>
+        </div>
+        <div class="headernavigationLinks">
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/login">Login</a></li>
+                <li><a routerLink="/signup">Signup</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main class="mainContent">
+    <section class="hero">
+        <h1>Welcome to MediStore</h1>
+        <p>Your Health, Our Priority</p>
+        <a routerLink="/signup" class="button">Get Started</a>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Wide Range of Products</h3>
+                <p>From over-the-counter medicines to wellness products, find everything you need in one place.</p>
+            </div>
+            <div class="service-card">
+                <h3>Online Consultations</h3>
+                <p>Book appointments with healthcare professionals from the comfort of your home.</p>
+            </div>
+            <div class="service-card">
+                <h3>Health Tips & Articles</h3>
+                <p>Stay informed with expert advice and the latest health news.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p>"MediStore has transformed the way I manage my health. Reliable and efficient!" - Priya</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Excellent service and a wide range of products. Highly recommend!" - Ravi</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Quick delivery and helpful customer support. Very satisfied!" - Anjali</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Join MediStore Today</h2>
+        <p>Create an account and explore the benefits of MediStore.</p>
+        <a routerLink="/signup" class="button">Sign Up Now</a>
+    </section>
+</main>
+
+<footer>
+    <div class="footerContent">
+        <div class="footernavigationLinks">
+            <ul>
+                <li><a routerLink="/aboutus">About Us</a></li>
+                <li><a routerLink="/contactus">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<router-outlet></router-outlet>

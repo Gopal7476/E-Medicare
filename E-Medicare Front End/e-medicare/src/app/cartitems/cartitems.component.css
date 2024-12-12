@@ -1,0 +1,128 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+.logo h2 {
+    margin: 0;
+}
+
+.headernavigationLinks ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.headernavigationLinks li {
+    margin-left: 15px;
+}
+
+.headernavigationLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.headernavigationLinks a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.cart-items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-items-table th,
+.cart-items-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-items-table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.quantity-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decrement-btn,
+.increment-btn,
+.delete-btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.decrement-btn:hover,
+.increment-btn:hover,
+.delete-btn:hover {
+    background-color: #e64a19;
+}
+
+.decrement-btn:focus,
+.increment-btn:focus,
+.delete-btn:focus {
+    outline: none;
+}
+
+.currency {
+    text-align: right;
+}
+
+.proceed-to-pay {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pay-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pay-btn:hover {
+    background-color: #218838;
+}
+
+.pay-btn:focus {
+    outline: none;
+}
